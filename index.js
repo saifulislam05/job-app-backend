@@ -17,4 +17,4 @@ mongoose
 
 app.use("/api/v1/job/", router);
 
-app.listen(5000,()=>console.log("server is running on port 5000"))
+app.listen(10000,()=>console.log("server is running on port 5000"))
