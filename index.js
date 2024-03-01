@@ -8,7 +8,7 @@ app.use(express.json());
 
 // connection with Mongo Database
 mongoose
-  .connect(`mongodb://localhost:27017/jobs`)
+  .connect(`mongodb://localhost:27017/job-app`)
   .then(() => console.log("Database Connected Successfully"))
   .catch((err) => console.log("Database connection Failed", err));
 
