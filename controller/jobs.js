@@ -33,5 +33,22 @@ const createJob = async (req, res) => {
     });
   }
 };
+const updateJob = async (req, res) => {
+  try {
+    const jobId = req.body._id;
+    const newJob = new jobsModel(req.body);
+    await jobsModel.findByIdAndUpdate(jobId, newJob);
 
-export { getJobs, createJob };
+    res.status(200).json({
+      success: true,
+      message: "job updated Successfully",
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: `error : ${error.message}`,
+    });
+  }
+};
+
+export { getJobs, createJob, updateJob };
